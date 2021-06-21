@@ -1,0 +1,74 @@
+%Part 1
+A=[16 3 2 13; 5 10 11 8; 9 6 7 12; 4 15 14 1];
+
+Dimensions = size(A);
+
+Determinant = det(A);
+
+Condition_Number = cond(A);
+
+A_Columns_Sum = sum(A,1);
+A_Rows_Sum = sum(A,2);
+A_Diagonal_Array = diag(A);
+A_Diagonal_Sum = sum(diag(A));
+
+B=[A(4,1) A(3,2) A(2,3) A(1,4)];
+
+Antidiagonal_Sum = sum(B)
+
+Diag_To_Zero = A-diag(diag(A))
+
+d = [1; 1; 1; 1] 
+
+x = inv(Diag_To_Zero)*d
+
+%Part 2
+DATA = [2 7 9 7; 3 1 5 6; 8 1 2 5]
+
+DATA'         % Transpose of matrix 
+
+DATA(:,[1 4])  % Uses an index to convert the original
+               % matrix into a 3x2 matrix consisting of 
+               % the first and fourth value in each row
+
+reshape(DATA,2,6) % Converts the original matrix to a 2x6 matrix
+               
+DATA(:)        % Changes the format of the array to
+               % only one element in each row, ordering 
+               % the elements by their index number in each 
+               % row. This matrix is now a 12x1 matrix.
+
+flipud(DATA)  % Flips the array from up to down
+
+fliplr(DATA)  % Flips the array from left to right 
+
+[DATA; DATA(end,:)]   % Prints the last row of data a second time
+
+DATA(1:3,:)    % Selects rows 1-3 and all the columns
+
+[DATA ; DATA(1:2,:)] %Repeats the first two rows of the matrix at the end
+
+sum(DATA')    % Sums the transpose of matrix 
+
+sum(DATA,2)   % Sums the rows of the chosen matrix
+
+[[ DATA ; sum(DATA) ] [ sum(DATA,2) ; sum(DATA(:)) ] ]
+% Sums the rows of the matrix, the columns of the matrix, and the sum of
+% the sums
+
+
+% Part 3
+
+t = [0:.01:2]
+y = .1-(.1*exp(-6*t).*cos(8*t))-(.075*exp(-6*t).*sin(8*t));
+
+plot(t,y);
+
+title('Mechanical Vibration System');
+xlabel('Time');
+ylabel('Response')
+
+
+
+
+
